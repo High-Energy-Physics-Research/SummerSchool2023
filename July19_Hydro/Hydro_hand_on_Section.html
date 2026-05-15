@@ -13243,29 +13243,87 @@ div#notebook {
         .output_subarea.output_stream.output_stderr.output_text {
             display: none !important;
         }
-    
-        .proof-block {
+
+        .math-block {
             margin: 24px 55px;
-            padding: 14px 18px;
-            border-left: 4px solid #555;
-            background: #f7f7f7;
-            border-radius: 6px;
+            border-radius: 14px;
+            background: var(--block-bg, #f7f7f7);
+            border-left: 5px solid var(--block-border, #555);
+            overflow: hidden;
         }
 
-        .proof-block summary {
+        .math-block.theorem {
+            --block-border: #2563eb;
+            --block-bg: #eff6ff;
+        }
+
+        .math-block.definition {
+            --block-border: #0f766e;
+            --block-bg: #ecfdf5;
+        }
+
+        .math-block.lemma {
+            --block-border: #7c3aed;
+            --block-bg: #f5f3ff;
+        }
+
+        .math-block.corollary {
+            --block-border: #d97706;
+            --block-bg: #fffbeb;
+        }
+
+        .math-block.axiom {
+            --block-border: #be123c;
+            --block-bg: #fff1f2;
+        }
+
+        .math-block.proposition {
+            --block-border: #475569;
+            --block-bg: #f8fafc;
+        }
+
+        .math-block.example {
+            --block-border: #0891b2;
+            --block-bg: #ecfeff;
+        }
+
+        .math-block.remark {
+            --block-border: #334155;
+            --block-bg: #f1f5f9;
+        }
+
+        .math-block summary,
+        .math-block-summary {
             cursor: pointer;
-            font-weight: 700;
-            font-size: 1.15em;
+            padding: 22px 26px;
+            list-style: none;
+        }
+
+        .math-block summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .math-block-summary h1,
+        .math-block-summary h2,
+        .math-block-summary h3,
+        .math-block-summary h4,
+        .math-block-summary p {
             text-indent: 0 !important;
         }
 
-        .proof-block p,
-        .proof-block h1,
-        .proof-block h2,
-        .proof-block h3,
-        .proof-block h4,
-        .proof-block h5,
-        .proof-block h6 {
+        .proof-content {
+            padding: 22px 26px;
+            border-top: 1px solid rgba(0,0,0,0.12);
+            background: white;
+        }
+
+        .proof-content p,
+        .proof-content h1,
+        .proof-content h2,
+        .proof-content h3,
+        .proof-content h4,
+        .proof-content ul,
+        .proof-content ol {
             text-indent: 0 !important;
         }
         </style>
@@ -13661,9 +13719,9 @@ div#notebook {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="17906372-1c84-400b-8fb3-ff575d439085">
+<div class="output_subarea output_javascript" id="0521c286-471d-4065-96e5-a7d94fcd08e5">
 <script type="text/javascript">
-var element = $('#17906372-1c84-400b-8fb3-ff575d439085');
+var element = $('#0521c286-471d-4065-96e5-a7d94fcd08e5');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -14478,9 +14536,9 @@ if (IPython.notebook.kernel != null) {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="c4857baa-b542-4cfb-b351-8b79a9812f28">
+<div class="output_subarea output_javascript" id="9ee18411-7f46-4657-885e-b0cdde9667a9">
 <script type="text/javascript">
-var element = $('#c4857baa-b542-4cfb-b351-8b79a9812f28');
+var element = $('#9ee18411-7f46-4657-885e-b0cdde9667a9');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -15295,9 +15353,9 @@ if (IPython.notebook.kernel != null) {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="c4527a0c-af2a-4687-8575-6530088177e3">
+<div class="output_subarea output_javascript" id="13bb74e2-1c2b-4684-ba95-bbdbb00666bf">
 <script type="text/javascript">
-var element = $('#c4527a0c-af2a-4687-8575-6530088177e3');
+var element = $('#13bb74e2-1c2b-4684-ba95-bbdbb00666bf');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -16122,9 +16180,9 @@ if (IPython.notebook.kernel != null) {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="01238f7d-248e-4fb6-af5e-d2c1139c0d41">
+<div class="output_subarea output_javascript" id="7665ebfe-c98b-4c8c-af52-8303e568567e">
 <script type="text/javascript">
-var element = $('#01238f7d-248e-4fb6-af5e-d2c1139c0d41');
+var element = $('#7665ebfe-c98b-4c8c-af52-8303e568567e');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -16948,9 +17006,9 @@ if (IPython.notebook.kernel != null) {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="619e0108-7ef6-464a-8a6e-46d94c0e4ed2">
+<div class="output_subarea output_javascript" id="d5ab74a7-1074-47cf-b3c5-81cdf9371895">
 <script type="text/javascript">
-var element = $('#619e0108-7ef6-464a-8a6e-46d94c0e4ed2');
+var element = $('#d5ab74a7-1074-47cf-b3c5-81cdf9371895');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -17775,9 +17833,9 @@ if (IPython.notebook.kernel != null) {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="1154b88d-abc4-4223-af21-fb9255f1c0ca">
+<div class="output_subarea output_javascript" id="6e2a6865-1bc2-439a-96ba-df5729101d16">
 <script type="text/javascript">
-var element = $('#1154b88d-abc4-4223-af21-fb9255f1c0ca');
+var element = $('#6e2a6865-1bc2-439a-96ba-df5729101d16');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
