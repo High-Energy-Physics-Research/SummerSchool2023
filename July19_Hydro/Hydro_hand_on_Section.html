@@ -13248,33 +13248,32 @@ div#notebook {
             margin: 2px;
             border-radius: 14px;
             background: var(--block-bg, #f7f7f7);
-            border-left: 5px solid var(--block-border, #555);
             overflow: hidden;
         }
 
         .math-block.theorem {
             --block-border: #2563eb;
-            --block-bg: #eff6ff;
+            --block-bg: #f8fafc;
         }
 
         .math-block.definition {
             --block-border: #0f766e;
-            --block-bg: #ecfdf5;
+            --block-bg: #f8fafc;
         }
 
         .math-block.lemma {
             --block-border: #7c3aed;
-            --block-bg: #f5f3ff;
+            --block-bg: #f8fafc;
         }
 
         .math-block.corollary {
             --block-border: #d97706;
-            --block-bg: #fffbeb;
+            --block-bg: #f8fafc;
         }
 
         .math-block.axiom {
             --block-border: #be123c;
-            --block-bg: #fff1f2;
+            --block-bg: #f8fafc;
         }
 
         .math-block.proposition {
@@ -13284,12 +13283,22 @@ div#notebook {
 
         .math-block.example {
             --block-border: #0891b2;
-            --block-bg: #ecfeff;
+            --block-bg: #f8fafc;
         }
 
         .math-block.remark {
             --block-border: #334155;
-            --block-bg: #f1f5f9;
+            --block-bg: #f8fafc;
+        }
+
+        .math-block.result {
+            --block-border: #9333ea;
+            --block-bg: #f8fafc;
+        }
+
+        .math-block.postulate {
+            --block-border: #b45309;
+            --block-bg: #f8fafc;
         }
 
         .math-block summary,
@@ -13312,8 +13321,10 @@ div#notebook {
         }
 
         .proof-content {
+            margin: 0 26px 22px 26px;
             padding: 22px 26px;
-            border-top: 1px solid rgba(0,0,0,0.12);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 12px;
             background: white;
         }
 
@@ -13328,7 +13339,7 @@ div#notebook {
         }
 
         .math-index {
-            margin: 2px;
+            margin: 0px 2px 6px 2px;
             padding: 22px 26px;
             border-radius: 16px;
             background: #f8fafc;
@@ -13380,21 +13391,25 @@ div#notebook {
             font-size: 0.95em;
         }
 
+        .math-block-footer {
+            padding: 5px 26px 10px 26px;
+            background: rgba(255,255,255,0.55);
+        }
+
         .math-block-links {
-            margin-top: 18px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(0,0,0,0.08);
+            padding-top: 0px;
             font-size: 0.85em;
-            opacity: 0.72;
             text-align: right;
+            color: #cbd5e1;
         }
 
         .math-block-links a {
-            color: inherit;
+            color: #94a3b8;
             text-decoration: none;
         }
 
         .math-block-links a:hover {
+            color: #64748b;
             text-decoration: underline;
         }
 
@@ -13432,22 +13447,6 @@ div#notebook {
             padding-bottom: 0 !important;
         }
 
-        .math-block.result {
-            --block-border: #9333ea;
-            --block-bg: #faf5ff;
-        }
-        .math-block-details {
-            padding: 14px 26px 18px 26px;
-            border-top: 1px solid rgba(0,0,0,0.10);
-            background: rgba(255,255,255,0.55);
-        }
-
-        .math-block-details .math-block-links {
-            margin-top: 0;
-            padding-top: 0;
-            border-top: none;
-        }
-
         .math-number {
             color: #94a3b8;
             font-size: 0.82em;
@@ -13455,9 +13454,42 @@ div#notebook {
             letter-spacing: 0.02em;
         }
 
-        .math-block.postulate {
-            --block-border: #b45309;
-            --block-bg: #fff7ed;
+        .math-block-summary {
+            padding: 18px 26px 24px 26px;
+        }
+
+        /* título do card vira metadado discreto */
+        .math-block-summary h1,
+        .math-block-summary h2,
+        .math-block-summary h3,
+        .math-block-summary h4 {
+            margin: 0 0 14px 0 !important;
+            padding: 0 !important;
+
+            font-size: 0.95rem !important;
+            line-height: 1.2 !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.04em;
+
+            color: var(--block-border, #64748b) !important;
+            opacity: 0.72;
+
+            text-transform: uppercase;
+            text-indent: 0 !important;
+        }
+
+        .math-number {
+            color: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            letter-spacing: inherit;
+        }
+
+        /* equações ganham prioridade visual */
+        .math-block-summary .MathJax_Display,
+        .math-block-summary mjx-container[display="true"] {
+            margin: 1.1rem 0 0.6rem 0 !important;
+            font-size: 1.08em;
         }
         </style>
 </head>
@@ -13852,9 +13884,9 @@ div#notebook {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="d08bba36-ad4b-4274-b633-e069c01a6512">
+<div class="output_subarea output_javascript" id="afdb9708-abe3-4fe1-bf9f-093aeda7f3cd">
 <script type="text/javascript">
-var element = $('#d08bba36-ad4b-4274-b633-e069c01a6512');
+var element = $('#afdb9708-abe3-4fe1-bf9f-093aeda7f3cd');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -14669,9 +14701,9 @@ if (IPython.notebook.kernel != null) {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="1999bd0c-d789-4dc6-a7df-a144710236da">
+<div class="output_subarea output_javascript" id="7a311850-aaa6-44a0-bf0a-4503fa48e3c4">
 <script type="text/javascript">
-var element = $('#1999bd0c-d789-4dc6-a7df-a144710236da');
+var element = $('#7a311850-aaa6-44a0-bf0a-4503fa48e3c4');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -15486,9 +15518,9 @@ if (IPython.notebook.kernel != null) {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="aa44994a-9237-46c3-91a2-2b2c91c3e005">
+<div class="output_subarea output_javascript" id="42a59dae-604b-42ba-907a-db8f037a9f02">
 <script type="text/javascript">
-var element = $('#aa44994a-9237-46c3-91a2-2b2c91c3e005');
+var element = $('#42a59dae-604b-42ba-907a-db8f037a9f02');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -16313,9 +16345,9 @@ if (IPython.notebook.kernel != null) {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="d92bc778-71b1-4e19-b2cb-5c653b48c395">
+<div class="output_subarea output_javascript" id="b990e830-170a-419c-af30-44bba66094a0">
 <script type="text/javascript">
-var element = $('#d92bc778-71b1-4e19-b2cb-5c653b48c395');
+var element = $('#b990e830-170a-419c-af30-44bba66094a0');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -17139,9 +17171,9 @@ if (IPython.notebook.kernel != null) {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="4ae95155-13fc-4688-a6fa-7e9bee5ec8a9">
+<div class="output_subarea output_javascript" id="1b875e06-1682-432e-a612-202a87a47f59">
 <script type="text/javascript">
-var element = $('#4ae95155-13fc-4688-a6fa-7e9bee5ec8a9');
+var element = $('#1b875e06-1682-432e-a612-202a87a47f59');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -17966,9 +17998,9 @@ if (IPython.notebook.kernel != null) {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_javascript" id="b7bbda10-3f0f-44ee-9fbf-094377bf104f">
+<div class="output_subarea output_javascript" id="c125b608-37c6-4b5f-8b14-acb108593582">
 <script type="text/javascript">
-var element = $('#b7bbda10-3f0f-44ee-9fbf-094377bf104f');
+var element = $('#c125b608-37c6-4b5f-8b14-acb108593582');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
